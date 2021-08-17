@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/common.css">
+    <meta charset="UTF-8">
+    <title>SHOW LIST</title>
+</head>
+<body>
+<H1>SHOW LIST</H1>
+<TABLE>
+        {% for item in myUserList %}
+            <TR>
+            <TD>{{ item.id }}</TD>
+            <TD>{{ item.username }}</TD>
+            <TD>{{ item.email }}</TD>
+            <TD><input type="submit"></TD>
+            </TR>
+        {% endfor %}
+</TABLE>
+</body>
+</html>

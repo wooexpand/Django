@@ -1,0 +1,31 @@
+https://blog.csdn.net/qq_33591055/article/details/80628418
+Python全栈（老男孩4期）Django框架入门到应用
+
+-- 班级表
+CREATE TABLE Class(
+id INT PRIMARY KEY auto_increment,
+class_name CHAR(20) NOT NULL
+)charset utf8;
+
+-- 学生表
+CREATE TABLE Student(
+id INT PRIMARY KEY auto_increment,
+stu_name CHAR(20) NOT NULL,
+class_id INT,
+FOREIGN KEY(class_id) REFERENCES Class(id) on delete cascade on update cascade
+)charset utf8;
+
+-- 老师表
+CREATE TABLE Teacher(
+id INT PRIMARY KEY auto_increment,
+th_name CHAR(20) NOT NULL
+)charset utf8;
+
+-- 老师和班级的关系表
+CREATE TABLE relationship(
+id INT PRIMARY KEY auto_increment,
+t_id INT,
+c_id INT,
+FOREIGN KEY(t_id) REFERENCES Teacher(id) on delete cascade on update cascade,
+FOREIGN KEY(c_id) REFERENCES Class(id) on delete cascade on update cascade
+)charset utf8;
